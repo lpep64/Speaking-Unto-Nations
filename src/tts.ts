@@ -10,9 +10,14 @@ export async function convertTextToSpeech(text: string) {
     const request = {
         input: { text },
         voice: {
-            name: 'en-US-Wavenet-F'     // Alt US Voices: 'A & D' Male, 'F & C' Female, 'E' Neutral
+            languageCode: 'en-UK',
+            name: 'en-US-Wavenet-D'     // Alt US Voices: 'A & D' Male, 'F & C' Female, 'E' Neutral
         },
-        audioConfig: { audioEncoding: 'MP3' }
+        audioConfig: {
+            audioEncoding: 'MP3',
+            pitch: -4.0, // Lower pitch for a deeper voice
+            speakingRate: 0.8 // Normal speaking rate
+        }
     };
 
     const [response] = await client.synthesizeSpeech(request as any);
