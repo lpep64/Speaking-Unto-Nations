@@ -10,9 +10,7 @@ export async function convertTextToSpeech(text: string) {
     const request = {
         input: { text },
         voice: {
-            languageCode: 'en-US',      // Change language here
-            ssmlGender: 'FEMALE',       // Change gender: 'MALE', 'FEMALE', 'NEUTRAL'
-            name: 'en-US-Wavenet-F'     // Optional: specify a voice name
+            name: 'en-US-Wavenet-F'     // Alt US Voices: 'A & D' Male, 'F & C' Female, 'E' Neutral
         },
         audioConfig: { audioEncoding: 'MP3' }
     };
