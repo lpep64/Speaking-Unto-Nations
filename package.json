@@ -1,0 +1,22 @@
+{
+  "name": "gcloud-speech-app",
+  "version": "1.0.0",
+  "description": "A project that utilizes Google Cloud Text-to-Speech and Speech-to-Text APIs.",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@google-cloud/speech": "^7.2.0",
+    "@google-cloud/text-to-speech": "^6.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.0.0",
+    "typescript": "^4.5.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "license": "MIT"
+}
