@@ -1,28 +1,40 @@
 import fs from 'fs';
 import textToSpeech from '@google-cloud/text-to-speech';
-import util from 'util';
-import { promisify } from 'util';
-import { Readable } from 'stream';
 
 const client = new textToSpeech.TextToSpeechClient();
 
-export async function convertTextToSpeech(ssml: string) {
+function extractVoiceNameFromSSML(ssml: string): string | null {
+    const match = ssml.match(/<voice\s+name=["']([^"']+)["']/i);
+    return match ? match[1] : null;
+}
+
+export async function convertTextToSpeech(input: string, outputPath: string, isSSML: boolean) {
+    let voiceName = 'en-US-Wavenet-A';
+
+    if (isSSML) {
+        const extracted = extractVoiceNameFromSSML(input);
+        if (extracted) {
+            voiceName = extracted;
+        }
+    }
+
     const request = {
-        input: { ssml },
+        input: isSSML ? { ssml: input } : { text: input },
         voice: {
             languageCode: 'en-US',
-            name: 'en-US-Wavenet-A'     // Alt US Voices: 'A & D' Male, 'F & C' Female, 'E' Neutral
+            name: voiceName
         },
         audioConfig: {
             audioEncoding: 'MP3',
-            pitch: -4.0, // Lower pitch for a deeper voice
-            speakingRate: 0.8 // Normal speaking rate
+            pitch: 0.0,
+            speakingRate: 1.0
         }
     };
 
     const [response] = await client.synthesizeSpeech(request as any);
-
-    const fs = require('fs');
-    fs.writeFileSync('speech.mp3', response.audioContent, 'binary');
-    console.log('Audio content written to file: speech.mp3');
+    if (response.audioContent) {
+        fs.writeFileSync(outputPath, response.audioContent, 'binary');
+    } else {
+        throw new Error('No audio content received from TTS API.');
+    }
 }

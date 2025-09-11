@@ -1,0 +1,57 @@
+<speak>
+    <voice name="en-GB-Wavenet-B">
+        <prosody pitch="+2st" rate="90%">
+            <p>
+                <s>
+                    <emphasis level="strong">We'll meet again,</emphasis>
+                    <break time="400ms"/>
+                    Don't know where, don't know when,
+                </s>
+                <break time="600ms"/>
+                <s>
+                    But I know we'll meet again some sunny day.
+                </s>
+                <break time="800ms"/>
+                <s>
+                    Keep smiling through,
+                    <break time="300ms"/>
+                    Just like you always do,
+                </s>
+                <break time="600ms"/>
+                <s>
+                    Till the blue skies drive the dark clouds far away.
+                </s>
+            </p>
+            <break time="1s"/>
+            <p>
+                <prosody pitch="+4st" rate="85%">
+                    <s>
+                        So will you please say hello to the folks that I know,
+                        <break time="300ms"/>
+                        Tell them I won't be long.
+                    </s>
+                    <break time="500ms"/>
+                    <s>
+                        They'll be happy to know that as you saw me go,
+                        <break time="300ms"/>
+                        I was singing this song.
+                    </s>
+                </prosody>
+            </p>
+            <break time="1s"/>
+            <p>
+                <prosody pitch="+2st" rate="90%">
+                    <s>
+                        <emphasis level="strong">We'll meet again,</emphasis>
+                        <break time="400ms"/>
+                        Don't know where, don't know when,
+                    </s>
+                    <break time="600ms"/>
+                    <s>
+                        But I know we'll meet again some sunny day.
+                    </s>
+                </prosody>
+            </p>
+        </prosody>
+    </voice>
+</speak>
