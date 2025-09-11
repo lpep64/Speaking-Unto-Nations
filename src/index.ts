@@ -3,8 +3,8 @@ import { convertSpeechToText } from './stt';
 import fs from 'fs';
 
 async function main() {
-    const text = fs.readFileSync('text.txt', 'utf8');
-    await convertTextToSpeech(text); 
+    const ssml = fs.readFileSync('text.ssml', 'utf8');
+    await convertTextToSpeech(ssml);
     await convertSpeechToText();
 }
 

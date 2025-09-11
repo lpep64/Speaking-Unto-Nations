@@ -6,12 +6,12 @@ import { Readable } from 'stream';
 
 const client = new textToSpeech.TextToSpeechClient();
 
-export async function convertTextToSpeech(text: string) {
+export async function convertTextToSpeech(ssml: string) {
     const request = {
-        input: { text },
+        input: { ssml },
         voice: {
-            languageCode: 'en-UK',
-            name: 'en-US-Wavenet-D'     // Alt US Voices: 'A & D' Male, 'F & C' Female, 'E' Neutral
+            languageCode: 'en-US',
+            name: 'en-US-Wavenet-A'     // Alt US Voices: 'A & D' Male, 'F & C' Female, 'E' Neutral
         },
         audioConfig: {
             audioEncoding: 'MP3',

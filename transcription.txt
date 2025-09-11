@@ -1,0 +1,3 @@
+hello and welcome to speaking unto Nations this is an advanced ssml example
+ with ssml you can control pitch rate and volume
+ you can also add pauses emphasis and the first of June 2024

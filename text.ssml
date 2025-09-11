@@ -1,0 +1,20 @@
+<speak>
+    <voice name="en-US-Wavenet-A">
+        <prosody rate="medium" pitch="+2st">
+            Hello, and welcome to <emphasis level="moderate">Speaking Unto Nations</emphasis>.
+        </prosody>
+        <break time="500ms"/>
+        <prosody rate="slow">
+            This is an <emphasis level="strong">advanced</emphasis> SSML example.
+        </prosody>
+        <break strength="strong"/>
+        <p>
+            <s>
+                With SSML, you can control <prosody pitch="+1st">pitch</prosody>, <prosody rate="fast">rate</prosody>, and <prosody volume="loud">volume</prosody>.
+            </s>
+            <s>
+                You can also add <break time="300ms"/> pauses, <emphasis level="reduced">emphasis</emphasis>, and <say-as interpret-as="date">2024-06-01</say-as>.
+            </s>
+        </p>
+    </voice>
+</speak>
